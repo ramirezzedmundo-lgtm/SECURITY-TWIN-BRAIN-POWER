@@ -18,15 +18,13 @@ Este repositorio integra **IA siamesa, PostgreSQL, Kubernetes, Redis y Python** 
 
 ---
 
-## 📊 Diagrama de arquitectura
+## Flujo completo del sistema
 
 ```mermaid
-flowchart TD
-    A[Usuario] --> B[IA Siamesa]
-    B --> C[PostgreSQL]
-    B --> D[Kubernetes]
-    D --> B
-    B --> E[Honeypots + Redis]
-    E --> F[Seguridad Activa]
-    F --> G[Dashboard Web]
-    G --> A
+flowchart LR
+    U[Usuario] --> F[Frontend Dashboard]
+    F --> B[Backend FastAPI]
+    B --> P[Pentesting Engine]
+    P -->|Nmap / Hydra / ZAP| R[Resultados JSON]
+    R --> F
+    F --> U
