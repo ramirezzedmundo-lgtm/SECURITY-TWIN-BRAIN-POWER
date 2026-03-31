@@ -1,0 +1,18 @@
+/seguridad-pentesting-repo
+│
+├── backend/                # Núcleo técnico
+│   ├── ia/                 # Red neuronal siamesa
+│   │   └── siamese.py
+│   ├── seguridad/          # Scripts de seguridad
+│   │   └── tokens.py
+│   ├── db/                 # Configuración PostgreSQL + Redis
+│   │   └── conexion.py
+│   └── k8s/                # Manifiestos de Kubernetes
+│       └── deployment.yaml
+│
+├── frontend/               # Dashboard web
+│   └── src/
+│       └── Dashboard.js
+│
+└── docs/                   # Documentación ceremonial
+    └── README.md
