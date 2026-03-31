@@ -40,21 +40,6 @@ flowchart TD
     D -->|Reemplazo automático| B
     B -->|Detección de ataque| E[Honeypots + Redis]
     E -->|Rotación de tokens| F[Seguridad Activa]
-    F -->|Reporte| G[Dashboard Web]
+    F -->|Reporte| G[Das
     G -->|Diagnóstico| A
-# Sistema de Seguridad + Pentesting Ético
 
-## Protocolo de 3 fases
-1. **Defensa preventiva**: IA gestiona red, puertos y periféricos. Kubernetes reemplaza instancias comprometidas.
-2. **Respuesta activa**: despliegue de honeypots, rotación de tokens cada 10s, CAPTCHA Rust/C++ y Redis para desvío de tráfico.
-3. **Recuperación y aprendizaje**: reporte detallado del ataque, recuento de daños, información del atacante y ajuste del protocolo.
-
-## Pentesting Ético
-- Escaneo con Nmap, Masscan, ZAP, Burp Suite.
-- Simulación de fuerza bruta con Hydra.
-- Reportes claros al usuario vía dashboard web.
-
-## Valor estratégico
-Cada ataque = aprendizaje  
-Cada aprendizaje = activo  
-Cada activo = recuperación tangible
