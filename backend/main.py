@@ -48,3 +48,4 @@ def guardar_modelo():
     conn.commit()
     conn.close()
     return {"status": "Modelo guardado en PostgreSQL"}
+
