@@ -1,3 +1,44 @@
-# SECURITY-TWIN-BRAIN-POWER
-SISTEMA DE SEGURIDAD TWIN BRAIN POWER
-🧠 Security Twin Brain Power (STBP)Next-Gen Hybrid AI Security OrchestratorSecurity Twin Brain Power es un ecosistema de seguridad ofensivo-defensivo de tres fases diseñado para la protección total de activos críticos, periféricos e integraciones en la nube (Gmail, Outlook, Drive). El sistema opera bajo un modelo de Confianza Cero (Zero Trust), donde la identidad es efímera y la vigilancia es constante a través de una red neuronal siamesa.🏗️ La Arquitectura de los "Dos Cerebros"El sistema se divide en dos núcleos operativos que trabajan en simbiosis:Brain-Alpha (The Muscle - Go/Rust/C++): Gestión de tráfico masivo, interceptación de bajo nivel (puertos/periféricos) y rotación de tokens en microsegundos.Brain-Beta (The Cognition - Python/IA): Análisis de comportamiento mediante redes neuronales siamesas, detección de anomalías y despliegue de señuelos (Honeypots).🛡️ Protocolo de Seguridad de 3 FasesFase 1: Prevención y Hardening de SuperficieGestión de Periféricos (Rust/C++): Monitoreo en tiempo real de buses USB y puertos de red. Bloqueo automático de hardware no autorizado a nivel de Kernel.Cloud Gatekeeper: Intercepción y validación de flujos en Gmail, Outlook y Google Drive mediante IA, asegurando que el acceso a la información sea contextual y temporal.Fase 2: Respuesta Ofensiva y AislamientoDetección de Fuerza Bruta (Go + Redis): Filtrado de alta velocidad capaz de procesar miles de intentos de login.Dynamic Token Rotation: * Estado Normal: JWT con vida útil de 35 min.Bajo Ataque: Rotación agresiva cada 10 seg.Honeypot Estratégico: Redirección inmediata del tráfico atacante a entornos aislados (Sandbox) para estudio y contención.Fase 3: Resiliencia, Forense y Auto-reparaciónZero Data Loss: Auditoría inmutable en PostgreSQL con lógica Append-only.IA Encapsulada (K8s): Si el contenedor de IA es comprometido, Kubernetes lo elimina y despliega una instancia limpia, recuperando el aprendizaje previo desde volúmenes persistentes.Reporte Forense ISO: Generación automática de reportes detallados del ataque y tácticas del atacante (TTPs).🚀 Stack TecnológicoCapaTecnologíasPropósitoBajo NivelRust, C/C++Control de puertos, periféricos y performance de red.ServiciosGo, Node.js, ExpressMicroservicios de alta concurrencia y APIs de gestión.InteligenciaPython, Redes SiamesasAnálisis de vectores de comportamiento y aprendizaje.PersistenciaPostgreSQL, RedisAuditoría forense y caché de alta velocidad para bloqueos.OrquestaciónDocker, Kubernetes (K8s)Auto-sanación, escalabilidad y aislamiento de servicios.SeguridadJWT, Zero Trust, mTLSAutenticación robusta y cifrado de extremo a extremo.
+# 🛡️ Sistema de Seguridad + Pentesting Ético
+
+Este repositorio integra **IA siamesa, PostgreSQL, Kubernetes, Redis y Python** para crear un protocolo de seguridad en 3 fases con pentesting ético y diagnóstico al usuario.
+
+---
+
+## 🔐 Protocolo de 3 fases
+
+1. **Defensa preventiva**  
+   - IA gestiona red, puertos y periféricos.  
+   - Kubernetes reemplaza instancias comprometidas sin perder aprendizaje.  
+
+2. **Respuesta activa**  
+   - Honeypots estratégicos para engañar y aislar al atacante.  
+   - Rotación de tokens cada 10 segundos bajo ataque.  
+   - CAPTCHA en Rust/C++ y Redis para desvío de tráfico masivo.  
+
+3. **Recuperación y aprendizaje**  
+   - Reporte detallado del ataque.  
+   - Recuento de daños y pérdida de datos (objetivo: cero).  
+   - IA ajusta protocolos y se repara automáticamente.  
+
+---
+
+## 🧪 Pentesting Ético
+
+- Escaneo con Nmap, Masscan, OWASP ZAP, Burp Suite.  
+- Simulación de fuerza bruta con Hydra.  
+- Reportes claros al usuario vía dashboard web.  
+
+---
+
+## 📊 Diagrama de arquitectura
+
+```mermaid
+flowchart TD
+    A[Usuario] -->|Acceso Gmail/Outlook/Drive| B[IA Siamesa]
+    B -->|Aprende patrones| C[PostgreSQL]
+    B -->|Gestión de puertos y periféricos| D[Kubernetes]
+    D -->|Reemplazo automático| B
+    B -->|Detección de ataque| E[Honeypots + Redis]
+    E -->|Rotación de tokens| F[Seguridad Activa]
+    F -->|Reporte| G[Dashboard Web]
+    G -->|Diagnóstico| A
