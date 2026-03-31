@@ -4,27 +4,15 @@ Este repositorio integra **IA siamesa, PostgreSQL, Kubernetes, Redis y Python** 
 
 ---
 
-## 🔐 Protocolo de 3 fases
-
-1. **Defensa preventiva**  
-   - IA gestiona red, puertos y periféricos.  
-   - Kubernetes reemplaza instancias comprometidas sin perder aprendizaje.  
-
-2. **Respuesta activa**  
-   - Honeypots estratégicos para engañar y aislar al atacante.  
-   - Rotación de tokens cada 10 segundos bajo ataque.  
-   - CAPTCHA en Rust/C++ y Redis para desvío de tráfico masivo.  
-
-3. **Recuperación y aprendizaje**  
-   - Reporte detallado del ataque.  
-   - Recuento de daños y pérdida de datos (objetivo: cero).  
-   - IA ajusta protocolos y se repara automáticamente.  
+## Protocolo de 3 fases
+1. **Defensa preventiva**: IA gestiona red, puertos y periféricos. Kubernetes reemplaza instancias comprometidas.  
+2. **Respuesta activa**: despliegue de honeypots, rotación de tokens cada 10s, CAPTCHA Rust/C++ y Redis para desvío de tráfico.  
+3. **Recuperación y aprendizaje**: reporte detallado del ataque, recuento de daños, información del atacante y ajuste del protocolo.  
 
 ---
 
-## 🧪 Pentesting Ético
-
-- Escaneo con Nmap, Masscan, OWASP ZAP, Burp Suite.  
+## Pentesting Ético
+- Escaneo con Nmap, Masscan, ZAP, Burp Suite.  
 - Simulación de fuerza bruta con Hydra.  
 - Reportes claros al usuario vía dashboard web.  
 
@@ -34,12 +22,11 @@ Este repositorio integra **IA siamesa, PostgreSQL, Kubernetes, Redis y Python** 
 
 ```mermaid
 flowchart TD
-    A[Usuario] -->|Acceso Gmail/Outlook/Drive| B[IA Siamesa]
-    B -->|Aprende patrones| C[PostgreSQL]
-    B -->|Gestión de puertos y periféricos| D[Kubernetes]
-    D -->|Reemplazo automático| B
-    B -->|Detección de ataque| E[Honeypots + Redis]
-    E -->|Rotación de tokens| F[Seguridad Activa]
-    F -->|Reporte| G[Das
-    G -->|Diagnóstico| A
-
+    A[Usuario] --> B[IA Siamesa]
+    B --> C[PostgreSQL]
+    B --> D[Kubernetes]
+    D --> B
+    B --> E[Honeypots + Redis]
+    E --> F[Seguridad Activa]
+    F --> G[Dashboard Web]
+    G --> A
