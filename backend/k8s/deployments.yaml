@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ia-seguridad
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ia-seguridad
+  template:
+    metadata:
+      labels:
+        app: ia-seguridad
+    spec:
+      containers:
+      - name: ia-container
+        image: seguridad/siamese:latest
+        ports:
+        - containerPort: 5000
