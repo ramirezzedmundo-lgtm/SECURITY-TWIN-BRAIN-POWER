@@ -18,15 +18,3 @@ Este repositorio integra **IA siamesa, PostgreSQL, Kubernetes, Redis y Python** 
 
 ---
 
-## Flujo completo del sistema
-
-```mermaid
-flowchart LR
-    U[Usuario] --> F[Frontend Dashboard]
-    F --> B[Backend FastAPI]
-    B --> P[Pentesting 
-    P -->|Nmap / Hydra / ZAP| R[Resultados JSON]
-    R --> F
-    F --> U
-
----
