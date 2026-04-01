@@ -24,19 +24,9 @@ Este repositorio integra **IA siamesa, PostgreSQL, Kubernetes, Redis y Python** 
 flowchart LR
     U[Usuario] --> F[Frontend Dashboard]
     F --> B[Backend FastAPI]
-    B --> P[Pentesting Engine]
+    B --> P[Pentesting 
     P -->|Nmap / Hydra / ZAP| R[Resultados JSON]
     R --> F
     F --> U
 
 ---
-## 🔐 Explicación del flujo
-- **Usuario (U):** accede al dashboard web.  
-- **Frontend (F):** hace la petición al backend.  
-- **Backend (B):** expone endpoints REST con FastAPI.  
-- **Pentesting Engine (P):** ejecuta pruebas (Nmap, Hydra, ZAP).  
-- **Resultados (R):** se devuelven en formato JSON.  
-- **Frontend (F):** muestra el diagnóstico claro al usuario.  
-
----
-
