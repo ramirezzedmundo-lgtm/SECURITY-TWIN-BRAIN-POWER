@@ -1,19 +1,40 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ia-seguridad
+  name: ia-container-deployment
+  labels:
+    app: ia-container
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: ia-seguridad
+      app: ia-container
   template:
     metadata:
       labels:
-        app: ia-seguridad
+        app: ia-container
     spec:
       containers:
       - name: ia-container
         image: seguridad/siamese:latest
         ports:
         - containerPort: 5000
+        imagePullPolicy: Always
+        resources:
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
+        securityContext:
+          allowPrivilegeEscalation: false
+          runAsNonRoot: true
+          runAsUser: 1000
+          readOnlyRootFilesystem: true
+          capabilities:
+            drop:
+              - ALL
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 5000
+          initialDelaySeconds: 10
+          periodSeconds: 30
