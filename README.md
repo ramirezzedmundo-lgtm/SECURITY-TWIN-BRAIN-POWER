@@ -30,7 +30,6 @@ flowchart LR
     F --> U
 
 ---
-
 ## 🔐 Explicación del flujo
 - **Usuario (U):** accede al dashboard web.  
 - **Frontend (F):** hace la petición al backend.  
