@@ -1,0 +1,26 @@
+# Fase 1: El Taller (Construcción)
+FROM python:3.11-slim as builder
+
+WORKDIR /app
+# Solo copiamos lo necesario para instalar dependencias
+COPY requirements.txt .
+RUN pip install --user --no-cache-dir -r requirements.txt
+
+# Fase 2: El Guerrero (Producción - Imagen Ligera)
+FROM python:3.11-slim
+
+WORKDIR /app
+# Traemos solo lo instalado de la fase anterior (Seguridad Zero Trust)
+COPY --from=builder /root/.local /root/.local
+COPY . .
+
+# Aseguramos que los binarios estén en el PATH
+ENV PATH=/root/.local/bin:$PATH
+
+# Exponemos el puerto de combate (ajusta según tu código)
+EXPOSE 8000
+
+# El juramento: El proceso no corre como root por seguridad
+USER 1000
+
+CMD ["python", "src/main.py"]
